@@ -1,9 +1,10 @@
 
 # Schema
 
-![Schema]()
+![alt text](https://github.com/aattsai/Pathway/blob/master/Screen%20Shot%202015-12-21%20at%204.23.13%20PM.png)
 
-```<?xml version="1.0" encoding="utf-8" ?>
+```
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, http://code.google.com/p/wwwsqldesigner/ -->
 <!-- Active URL: http://schemadesigner.devbootcamp.com/ -->
 <sql>
@@ -155,4 +156,5 @@
 <part>id</part>
 </key>
 </table>
-</sql>```
+</sql>
+```
