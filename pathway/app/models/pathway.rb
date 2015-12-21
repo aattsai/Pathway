@@ -5,4 +5,5 @@ class Pathway < ActiveRecord::Base
   has_many :projects, through: :pathway_projects
   has_many :pathway_users
   has_many :users, through: :pathway_users
+
 end

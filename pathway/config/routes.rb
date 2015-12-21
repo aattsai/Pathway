@@ -2,6 +2,14 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  root 'pathways#index'
+
+  get '/sessions/new', to: 'sessions#new'
+  post '/sessions', to: 'sessions#create'
+  get '/sessions/:id', to: 'sessions#destroy'
+
+  get '/users/new', to: 'users#new'
+  post '/users', to: 'users#create'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
