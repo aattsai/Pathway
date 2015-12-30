@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>Pathway</h1>
+  <h1><%= link_to 'Pathway', root_path %></h1>
 
 <% if current_user %>
   Signed in as <%= current_user.email %> | <%= link_to "Logout", '/sessions/' + current_user.id.to_s %>
