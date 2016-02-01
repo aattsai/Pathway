@@ -1,7 +1,7 @@
 
 # Schema
 
-![alt text]()
+![alt text](https://github.com/aattsai/Pathway/blob/master/Screen%20Shot%202016-02-01%20at%202.16.06%20PM.png)
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
