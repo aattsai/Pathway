@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pathway</title>
+  <title>Pipeline</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1><%= link_to 'Pathway', root_path %></h1>
-
-<% if current_user %>
-  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/sessions/' + current_user.id.to_s %>
-<% else %>
-  <%= link_to 'Login', '/sessions/new' %> | <%= link_to 'Signup', '/users/new' %>
-<% end %>
 
 <%= yield %>
 

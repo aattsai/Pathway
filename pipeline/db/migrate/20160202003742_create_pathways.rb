@@ -1,10 +1,9 @@
 class CreatePathways < ActiveRecord::Migration
   def change
     create_table :pathways do |t|
-      t.string :name, null: false
-      t.string :description, null: false
-
-      t.timestamps null:false
+      t.integer :user_id
+      t.string :name
+      t.string :description
     end
   end
 end
