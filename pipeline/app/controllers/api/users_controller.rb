@@ -1,4 +1,4 @@
-module User
+module Api
   class UsersController < ApplicationController
     skip_before_action :authenticate_user_from_token!, only: [:create]
 
@@ -8,7 +8,7 @@ module User
       @user = User.new user_params
 
       if @user.save
-        render json: @user, serializer: User::SessionSerializer, root: nil
+        render json: @user, serializer: API::SessionSerializer, root: nil
       else
         render json: { error: t('user_create_error') }, status: :unprocessable_entity
       end
