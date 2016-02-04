@@ -1,5 +1,6 @@
 'use strict';
 
-app.controller('UserController', 
-  
-  )
+pathwayApp.controller('UserController', 
+  function($scope) {   
+  }
+)
