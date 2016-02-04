@@ -13,4 +13,9 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
     // templateUrl: '../app/assets/templates/index.html',
     controller: 'HomeController'
   })
+  .state('login', {
+    url: '/user/login',
+    templateUrl: 'login.html',
+    controller: 'UserController'
+  })
 });

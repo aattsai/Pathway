@@ -3,19 +3,12 @@
   <div class="row-fluid">
     <div class="span3">
       <fieldset>
-        <label for="userName">User Name:</label>
-        <input focus id="userName" required ng-pattern="/^[-A-Za-z0-9]{2,20}$/" type="text" placeholder="Username" ng-model="user.userName" />
+        <label for="email">Email:</label>
+        <input focus id="email" required type="text" placeholder="email" ng-model="user.email" />
         <label for="password">Password:</label>
         <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
+        <input type="submit">
       </fieldset>
-      <div style="margin-top:15px">
-        <fieldset>
-          <label for="name">Name:</label>
-          <input id="name" type="text" placeholder="Name" ng-model="user.name" />
-          <label for="emailAddress">Email Address:</label>
-          <input id="emailAddress" type="email" placeholder="Email Address" ng-model="user.emailAddress" />
-      </fieldset>
-    </div>
   </div>
 </div>
 
