@@ -1,5 +1,6 @@
 <div ng-controller="UserController">
-<form name="userLoginForm">
+
+<form name="userLoginForm" ng-submit="submitLogin(user)" role="form" ng-init="user = {}">
   <div class="row-fluid">
     <div class="span3">
       <fieldset>
@@ -7,8 +8,9 @@
         <input focus id="email" required type="text" placeholder="email" ng-model="user.email" />
         <label for="password">Password:</label>
         <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
-        <input type="submit">
+        <button type="submit">Login</button>
       </fieldset>
   </div>
+  
 </div>
 
