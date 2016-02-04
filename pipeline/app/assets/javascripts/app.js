@@ -1,6 +1,6 @@
 'use strict';
 
-var pathwayApp = angular.module('pathwayApp', ['ui.router']);
+var pathwayApp = angular.module('pathwayApp', ['ui.router', 'templates']);
 
 pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //Default route
@@ -9,7 +9,7 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
   $stateProvider
   .state('home', {
     url: '/',
-    templateUrl: '../app/views/templates/index.html',
+    templateUrl: 'index.html',
     // templateUrl: '../app/assets/templates/index.html',
     controller: 'HomeController'
   })
