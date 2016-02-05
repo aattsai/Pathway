@@ -23,7 +23,7 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
   })
   .state('register', {
     url: '/user/new',
-    tempalteUrl: 'register.html',
+    templateUrl: 'register.html',
     controller: 'UserController'
   })
 });
