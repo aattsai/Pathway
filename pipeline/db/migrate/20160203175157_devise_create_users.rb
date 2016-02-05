@@ -32,6 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.string :first_name, null: false
       t.string :last_name, null: false
+      t.string :access_token
       t.integer :score
 
       t.timestamps null: false
