@@ -1,6 +1,4 @@
-
 <div ng-controller="UserController">
-<p>{{ signedIn() ? "true" : "false" }}</p>
   <div ng-if="signedIn()">
     Welcome, {{ userEmail }}
     <button ng-click="logout()" class="btn btn-primary" >Logout</button>
