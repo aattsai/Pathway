@@ -31,5 +31,20 @@ pathwayApp.controller('UserController',
       sessionStorage.removeItem('email')
     })
   };
+  $scope.register = function() {
+    $http({
+      method: 'POST',
+      url: '/api/register',
+      data: {user: {first_name: $scope.user.firstName, last_name: $scope.user.lastName, email: $scope.user.email, password: $scope.user.password}},
+      success_message: "Account has been successfully created!",
+      error_entity: $scope.register_error
+    }).success(function(data, status){
+      sessionStorage.access_token = data.access_token
+      sessionStorage.email = data.email
+      window.location.href = "/"
+    }).error(function(data, status){
+      $scope.message = data.error
+    })
+  }
   }
 )
