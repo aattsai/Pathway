@@ -7,5 +7,4 @@ Rails.application.routes.draw do
     resource :login, only: [:create, :destroy], controller: :sessions
     resource :register, only: [:create], controller: :users
   end
-  resource :user, only: [:new]
 end
