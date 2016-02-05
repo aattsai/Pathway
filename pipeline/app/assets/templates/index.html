@@ -1,3 +1,13 @@
-<h1>Pathway</h1>
 
-<a ui-sref="login">Login</a>
+<div ng-controller="UserController">
+<p>{{ signedIn() ? "true" : "false" }}</p>
+  <div ng-if="signedIn()">
+    Welcome, {{ userEmail }}
+    <button ng-click="logout()" class="btn btn-primary" >Logout</button>
+  </div>
+  <div ng-if="!signedIn()">
+    <a ui-sref="login">Login</a>
+    <a ui-sref="register">Register</a>
+    <div ui-view></div>
+  </div>
+</div>

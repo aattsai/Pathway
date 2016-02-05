@@ -1,16 +1,10 @@
-<div ng-controller="UserController">
-
-<form name="userLoginForm" ng-submit="submitLogin(user)" role="form" ng-init="user = {}">
-  <div class="row-fluid">
-    <div class="span3">
-      <fieldset>
-        <label for="email">Email:</label>
-        <input focus id="email" required type="text" placeholder="email" ng-model="user.email" />
-        <label for="password">Password:</label>
-        <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
-        <button type="submit">Login</button>
-      </fieldset>
+{{message}}
+<form name="userLoginForm" ng-submit="submit()" role="form" ng-init="user = {}">
+  <div>
+    <label for="email">Email:</label>
+    <input focus id="email" required type="text" placeholder="email" ng-model="user.email" />
+    <label for="password">Password:</label>
+    <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
+    <button type="submit" ng-click="login()">Login</button>
   </div>
-  
-</div>
 
