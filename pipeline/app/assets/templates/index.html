@@ -13,7 +13,7 @@
 <h2>Pathways</h2>
 <div ng-controller="HomeController">
 <div ng-repeat="pathway in pathways">
-  <h3><a ui-sref="showPathway">{{pathway.name}}</a></h3>
+  <h3><a ui-sref="showPathway({id: pathway.id })">{{pathway.name}}</a></h3>
   <p>{{pathway.description}}</p>
 </div>
 </div>
