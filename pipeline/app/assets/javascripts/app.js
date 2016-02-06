@@ -26,4 +26,9 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
     templateUrl: 'register.html',
     controller: 'UserController'
   })
+  .state('showPathway', {
+    url: '/pathway/:id',
+    templateUrl: 'pathway.html',
+    controller: 'PathwayController'
+  })
 });

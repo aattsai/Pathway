@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   root 'application#index'
-  get '*path' => 'application#index'
+  # get '*path' => 'application#index'
   devise_for :users, only: []
 
   namespace :api, defaults: { format: :json } do
-    resource :login, only: [:create, :destroy], controller: :sessions
-    resource :register, only: [:create], controller: :users
+    resources :login, only: [:create, :destroy], controller: :sessions
+    resources :register, only: [:create], controller: :users
+    resources :pathways, only: [:index, :show]
   end
 end
