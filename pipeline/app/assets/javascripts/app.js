@@ -31,4 +31,9 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
     templateUrl: 'pathway.html',
     controller: 'PathwayController'
   })
+  .state('showProject', {
+    url: '/pathway/:pathway_id/project/:id',
+    templateUrl: 'project.html',
+    controller: 'ProjectController'
+  })
 });
