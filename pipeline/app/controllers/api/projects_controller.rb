@@ -1,6 +1,6 @@
 module Api
   class ProjectsController < ApplicationController
-    def index
+    def show
       projects = Project.find(params[:id])
       render json: projects.to_json
     end
