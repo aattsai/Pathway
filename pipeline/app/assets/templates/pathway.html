@@ -3,5 +3,9 @@
   <p>Description: {{pathway.description}}</p>
 
   <h2>Projects</h2>
-  
+  <div ng-repeat="pathway_project in pathway.pathway_projects">
+    <h3><a ui-sref="showProject({pathway_id: pathway.id, id: pathway_project.project.id })">{{pathway_project.project.name}}</a></h3>
+    <h4>Blog url: {{pathway_project.project.blog_url}}</h4>
+    <p>{{pathway_project.project.description}}</p>
+  </div>
 </div>
