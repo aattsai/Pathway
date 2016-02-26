@@ -2,7 +2,7 @@ module Api
   class SessionsController < ApplicationController
     skip_before_action :authenticate_user_from_token!
 
-    # POST /user/login
+    # POST /login
     def create
       @user = User.find_for_database_authentication(email: params[:username])
       return invalid_login_attempt unless @user
@@ -17,7 +17,7 @@ module Api
 
     def destroy
       warden.logout
-      render json: {} 
+      render json: {}
     end
 
     private
