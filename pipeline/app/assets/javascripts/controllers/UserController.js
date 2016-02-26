@@ -1,14 +1,14 @@
 'use strict';
 
-pathwayApp.controller('UserController', 
-  function($scope, $http) { 
+pathwayApp.controller('UserController',
+  function($scope, $http) {
     $scope.userEmail = sessionStorage.email
     $scope.userId = 0
     $scope.signedIn = function() {
       return sessionStorage.access_token ? true : false
     }
     $scope.login = function() {
-      $http({method: 'POST', 
+      $http({method: 'POST',
              url: '/api/login',
              data: {username: $scope.user.email, password: $scope.user.password},
              success_message: "You have been logged in.",
@@ -23,9 +23,14 @@ pathwayApp.controller('UserController',
         $scope.message = data.error
        })
   };
+
   $scope.logout = function() {
-      sessionStorage.removeItem('access_token')
-      sessionStorage.removeItem('email')
+      $http({method: 'DELETE',
+              url: '/api/login/'+ $scope.userId
+      }).success(function(data, status){
+        sessionStorage.removeItem('access_token')
+        sessionStorage.removeItem('email')
+      })
   };
   $scope.register = function() {
     $http({
