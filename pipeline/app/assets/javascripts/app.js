@@ -29,6 +29,10 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
     url: '/discover',
     templateUrl: 'discover.html',
     controller: 'HomeController'
+  .state('createProject', {
+    url: '/project/new',
+    templateUrl: 'newProject.html',
+    controller: 'ProjectController'
   })
   .state('showPathway', {
     url: '/pathway/:id',

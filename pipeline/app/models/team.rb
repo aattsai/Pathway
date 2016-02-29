@@ -1,5 +1,15 @@
 class Team < ActiveRecord::Base
-  belongs_to :project
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
-  validates :institution, :description, :lead_researcher, presence: true
+  belongs_to :project
+  after_create :update_access_token!  
+
+  private
+  def update_access_token!
+    self.access_token = "#{self.id}:#{Devise.friendly_token}"
+    save
+  end
 end

@@ -1,0 +1,18 @@
+{{message}}
+<form name="newProjectForm" ng-submit="submit()" role="form" ng-init="project = {}">
+  <div>
+        <label for="name">Name:</label>
+        <input focus id="name" required type="text" placeholder="Name of Project" ng-model="project.name" />
+    </div>
+    <div>
+        <label for="Description">Description</label>
+        <textarea id="description" required type="Description" placeholder="Description of Project" ng-model="project.description"></textarea>
+    </div>
+        <label for="blog_url">Blog URL:</label>
+        <input focus id="blog_url" type="text" placeholder="Blog URL" ng-model="project.blog_url" />
+    <div>
+        <button type="submit" ng-click="create()">Submit Project</button>
+    </div>
+  </div>
+</form>
+

@@ -16,6 +16,13 @@
         </div>
       </div>
     </div>
+<div ng-controller="UserController">
+  <div ng-if="signedIn()">
+    Welcome, {{ userEmail }}
+    <div ng-if="researcher()">
+      <a ui-sref="createProject">Create Project</a>
+    </div>
+    <button ng-click="logout()" class="btn btn-primary" >Logout</button>
   </div>
   <div class="ui vertical masthead center aligned segment second">
     <div class="ui text container">
