@@ -6,10 +6,50 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
-  
+
 </head>
 <body ng-app="pathwayApp">
-<h1><a ui-sref="home">Pathway</a></h1>
+
+<div class="ui top fixed hidden menu">
+  <a ui-sref="home">
+    <h1 class="ui item active">Pathway</h1>
+  </a>
+  <a ui-sref="discover" class="item">
+    Discover
+  </a>
+  <a class="item">
+    How It Works
+  </a>
+  <a class="right item">
+    Contact Us
+  </a>
+</div>
+
+  <div class="ui menu">
+    <div class="right item">
+      <div class="ui transparent icon input">
+        <input type="text" placeholder="Search for pathway">
+        <i class="search link icon"></i>
+      </div>
+    </div>
+  </div>
+  <nav class="ui secondary pointing menu dis">
+    <a ui-sref="home">
+      <h1 class="ui item active">Pathway</h1>
+    </a>
+    <a class="toc item">
+      <i class="sidebar icon"></i>
+    </a>
+    <a ui-sref="discover" class="item">
+      Discover
+    </a>
+    <a class="item">
+      How It Works
+    </a>
+    <a class="right item">
+      Contact Us
+    </a>
+  </nav>
 
 <ui-view>
 </ui-view>

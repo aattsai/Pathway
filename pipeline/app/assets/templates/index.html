@@ -1,19 +1,24 @@
-<div ng-controller="UserController">
-  <div ng-if="signedIn()">
-    Welcome, {{ userEmail }}
-    <button ng-click="logout()" class="btn btn-primary" >Logout</button>
+<div class="pusher"></div>
+  <div class="ui vertical masthead center aligned segment">
+    <div class="ui text container">
+      <h1 class="ui header">
+        Forget about Silver Bullets
+      </h1>
+      <h2>Together, we build Pathways for cure</h2>
+      <div ng-controller="UserController">
+        <div ng-if="signedIn()">
+          Welcome, {{ userEmail }}
+          <button ng-click="logout()" class="ui basic red button" >Logout</button>
+        </div>
+        <div ng-if="!signedIn()">
+          <a ui-sref="login"><button class="ui basic blue button">Return User Login</button></a>
+          <a ui-sref="register"><button class="ui basic orange button">New User Register</button></a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div ng-if="!signedIn()">
-    <a ui-sref="login">Login</a>
-    <a ui-sref="register">Register</a>
-    <div ui-view></div>
+  <div class="ui vertical masthead center aligned segment">
+    <div class="neuron-bg main-pg-segment main-slogan">
+    </div>
   </div>
-</div>
-
-<h2>Pathways</h2>
-<div ng-controller="HomeController">
-<div ng-repeat="pathway in pathways">
-  <h3><a ui-sref="showPathway({id: pathway.id })">{{pathway.name}}</a></h3>
-  <p>{{pathway.description}}</p>
-</div>
 </div>

@@ -38,9 +38,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'sprockets', '2.12.3'
 
-#Use angular templates. Used with rails asset pipeline 
+#Use angular templates. Used with rails asset pipeline
 gem 'angular-rails-templates'
 
+#Use Semantic UI for Sass as styling framework
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

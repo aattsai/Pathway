@@ -12,7 +12,26 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require semantic-ui
 //= require angular
 //= require angular-rails-templates
 //= require_tree ../templates
 //= require_tree .
+
+$(document).ready(function(){
+  $('.ui .item').on('click', function() {
+    $('.ui .item').removeClass('active');
+    $(this).addClass('active');
+  });
+
+ $('.dis').visibility({
+    once: false,
+    onBottomPassed: function() {
+      $('.fixed.menu').transition('fade in');
+    },
+    onBottomPassedReverse: function() {
+      $('.fixed.menu').transition('fade out');
+    }
+  });
+});
+
