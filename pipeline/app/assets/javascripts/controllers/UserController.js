@@ -7,9 +7,6 @@ pathwayApp.controller('UserController',
     $scope.signedIn = function() {
       return $cookieStore.get('pathway_user') ? true : false
     }
-    $scope.researcher = function() {
-      return sessionStorage.researcher == "true" ? true : false
-    }
     $scope.login = function() {
       var credentials = {
         email: $scope.user.email,
@@ -31,24 +28,6 @@ pathwayApp.controller('UserController',
       }, function(data) {
         console.log(data)
         $scope.message = data.data.error
-      });
-    }
-    $scope.researchLogin = function() {
-      var credentials = {
-        email: $scope.researcher.email,
-        password: $scope.researcher.password
-      };
-      var config = {
-          headers: {
-              'X-HTTP-Method-Override': 'POST'
-          }
-      };
-      Auth.login(credentials, config).then(function(user) {
-        console.log(user);
-        $scope.currentUser = user
-        Auth._currentUser = user
-      }, function(error) {
-          console.log(error)
       });
     }
   $scope.logout = function() {
