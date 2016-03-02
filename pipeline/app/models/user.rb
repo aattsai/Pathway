@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :pathway_donors
   has_many :pathways
+  has_many :user_projects
 
   validates :email, :first_name, :last_name, presence: true
   after_create :update_access_token!  
