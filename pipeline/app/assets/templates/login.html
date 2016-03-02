@@ -1,16 +1,37 @@
-{{message}}
-<form name="userLoginForm" ng-submit="submit()" role="form" ng-init="user = {}">
-  <div>
-    <label for="email">Email:</label>
-    <input focus id="email" required type="text" placeholder="email" ng-model="user.email" />
-    <label for="password">Password:</label>
-    <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
-    <button type="submit" ng-click="login()">Login</button>
+<div class="ui middle aligned segment center aligned">
+  <div class="column">
+    <h2 class="ui olive image header">
+      <div class="content">
+        Log-in to Fund a Cause Now
+      </div>
+    </h2>
+    <form name="userLoginForm" ng-submit="submit()" role="form" ng-init="user = {}" class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input focus id="email" required type="text" placeholder="E-mail address" ng-model="user.email" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
+          </div>
+        </div>
+        <button type="submit" class="ui fluid large olive submit button" ng-click="login()">Login</button>
+        <p class="error-message">{{message}}</p>
+      </div>
+    </form>
+    <div class="ui message">
+      New to us? <a ui-sref="register">Sign Up</a>
+    </div>
   </div>
-</form>
+</div>
+
 
 <h3>Research login</h3>
-<form name="userLoginForm" ng-submit="submit()" role="form" ng-init="researcher = {}">
+<form name="userLoginForm" ng-submit="submit()" role="form" ng-init="researcher = {}" class="ui large form">
   <div>
     <label for="email">Email:</label>
     <input focus id="email" required type="text" placeholder="email" ng-model="researcher.email" />
@@ -19,4 +40,3 @@
     <button type="submit" ng-click="researchLogin()">Login</button>
   </div>
 </form>
-

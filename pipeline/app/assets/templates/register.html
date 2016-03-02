@@ -1,15 +1,42 @@
-{{message}}
-<form name="userRegisterForm" ng-submit="submit()" role="form" ng-init="user = {}">
-  <div>
-    <label for="firstName">First Name:</label>
-    <input focus id="firstName" required type="text" placeholder="First Name" ng-model="user.firstName" />
-    <label for="lastName">Last Name:</label>
-    <input id="lastName" required type="lastName" placeholder="Last Name" ng-model="user.lastName" />
-    <label for="email">Email:</label>
-    <input focus id="email" required type="text" placeholder="E-mail" ng-model="user.email" />
-    <label for="password">Password:</label>
-    <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
-    <button type="submit" ng-click="register()">Login</button>
+<div class="ui middle aligned segment center aligned">
+  <div class="column">
+    <h2 class="ui olive image header">
+      <div class="content">
+        Register to Start Funding Today
+      </div>
+    </h2>
+    <form name="userRegisterForm" ng-submit="submit()" role="form" ng-init="user = {}" class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input focus id="firstName" required type="text" placeholder="First Name" ng-model="user.firstName" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input id="lastName" required type="lastName" placeholder="Last Name" ng-model="user.lastName" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="mail icon"></i>
+            <input focus id="email" required type="text" placeholder="E-mail" ng-model="user.email" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input id="password" required type="password" placeholder="Password" ng-model="user.password" />
+          </div>
+        </div>
+        <button type="submit" class="ui fluid large olive submit button" ng-click="register()">Register</button>
+        <p class="error-message">{{message}}</p>
+      </div>
+    </form>
+    <div class="ui message">
+      Already has an account? <a ui-sref="login">Log-in</a>
+    </div>
   </div>
-</form>
-
+</div>
