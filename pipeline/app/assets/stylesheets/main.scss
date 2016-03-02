@@ -74,6 +74,19 @@
     opacity: .5;
 }
 
+body > .grid {
+  height: 100%;
+}
+
+.column {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.error-message {
+  color: red;
+}
+
 .footer.segment {
   padding: 5em 0em;
   background: #8a8475 !important;

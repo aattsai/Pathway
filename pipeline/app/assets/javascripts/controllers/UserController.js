@@ -1,7 +1,7 @@
 'use strict';
 
-pathwayApp.controller('UserController', 
-  function($scope, $http, Auth, $state, $cookieStore) { 
+pathwayApp.controller('UserController',
+  function($scope, $http, Auth, $state, $cookieStore) {
     if ($cookieStore.get('pathway_user')) {$scope.userEmail = $cookieStore.get('pathway_user').email}
     $scope.userId = 0
     $scope.signedIn = function() {
@@ -30,7 +30,7 @@ pathwayApp.controller('UserController',
         });
       }, function(data) {
         console.log(data)
-        $scope.message = data.error
+        $scope.message = data.data.error
       });
     }
     $scope.researchLogin = function() {
@@ -63,7 +63,7 @@ pathwayApp.controller('UserController',
         $cookieStore.remove('pathway_user')
         $state.go('home')
     }, function(error) {
-        $scope.message = "Problem logging out: " + error.error 
+        $scope.message = "Problem logging out: " + error.error
     });
   }
 
@@ -96,7 +96,7 @@ pathwayApp.controller('UserController',
       sessionStorage.email = data.email
       window.location.href = "/"
     }).error(function(data, status){
-      $scope.message = data.error
+      $scope.message = data.data.error
     })
   }
   }
