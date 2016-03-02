@@ -3,6 +3,7 @@ class CreateUserProjects < ActiveRecord::Migration
     create_table :user_projects do |t|
       t.integer :user_id, null: false
       t.integer :project_id, null: false
+      t.string :access, null: false
 
       t.timestamps null: false
     end
