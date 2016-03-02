@@ -1,6 +1,6 @@
 'use strict';
 
-var pathwayApp = angular.module('pathwayApp', ['ui.router', 'templates']);
+var pathwayApp = angular.module('pathwayApp', ['ui.router', 'templates', 'Devise', 'ngCookies']);
 
 pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //Default route
@@ -10,10 +10,6 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
   .state('home', {
     url: '/',
     templateUrl: 'index.html',
-  })
-  .state('logout', {
-    url: '/',
-    controller: 'UserController'
   })
   .state('login', {
     url: '/user/login',
