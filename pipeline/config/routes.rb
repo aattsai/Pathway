@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'application#index'
   # get '*path' => 'application#index'
-  devise_for :users, defaults: { format: :json }
+  devise_for :users, defaults: { format: :json }, controllers: { registrations: 'registrations' }
   devise_for :teams, defaults: { format: :json }
 
   namespace :api, defaults: { format: :json } do
