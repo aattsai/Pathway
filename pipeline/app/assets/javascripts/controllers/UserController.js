@@ -58,7 +58,6 @@ pathwayApp.controller('UserController',
       }
     };
     Auth.logout().then(function(user) {
-        debugger
         $scope.message = "You have logged out"
         $cookieStore.remove('pathway_user')
         $state.go('home')
@@ -69,35 +68,24 @@ pathwayApp.controller('UserController',
 
   $scope.register = function() {
     var credentials = {
-        email: $scope.user.email,
-        password: $scope.user.password,
-        first_name: $scope.user.firstName,
-        last_name: $scope.user.lastName
+      email: $scope.user.email,
+      password: $scope.user.password,
+      first_name: $scope.user.firstName,
+      last_name: $scope.user.lastName
     };
     var config = {
         headers: {
             'X-HTTP-Method-Override': 'POST'
         }
     };
-
     Auth.register(credentials, config).then(function(registeredUser) {
-        console.log(registeredUser); // => {id: 1, ect: '...'}
+        console.log(registeredUser);
+        $scope.currentUser = registeredUser
+        $state.go('home')
     }, function(error) {
+      console.log(error.data.errors)
         // Registration failed...
     });
-    $http({
-      method: 'POST',
-      url: '/api/register',
-      data: {user: {first_name: $scope.user.firstName, last_name: $scope.user.lastName, email: $scope.user.email, password: $scope.user.password}},
-      success_message: "Account has been successfully created!",
-      error_entity: $scope.register_error
-    }).success(function(data, status){
-      sessionStorage.access_token = data.access_token
-      sessionStorage.email = data.email
-      window.location.href = "/"
-    }).error(function(data, status){
-      $scope.message = data.data.error
-    })
   }
   }
 )
