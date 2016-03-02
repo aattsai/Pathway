@@ -4,6 +4,7 @@
   <title>Pathway</title>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
 
@@ -12,7 +13,7 @@
 
 <div class="ui top fixed hidden menu">
   <a ui-sref="home">
-    <h1 class="ui item active">Pathway</h1>
+    <h1 class="ui item logo active">Pathway</h1>
   </a>
   <a ui-sref="discover" class="item">
     Discover
@@ -25,9 +26,9 @@
   </a>
 </div>
 
-  <div class="ui menu">
+  <div class="ui inverted menu">
     <div class="right item">
-      <div class="ui transparent icon input">
+      <div class="ui inverted transparent icon input">
         <input type="text" placeholder="Search for pathway">
         <i class="search link icon"></i>
       </div>
@@ -35,7 +36,7 @@
   </div>
   <nav class="ui secondary pointing menu dis">
     <a ui-sref="home">
-      <h1 class="ui item active">Pathway</h1>
+      <h1 class="ui item logo active">Pathway</h1>
     </a>
     <a class="toc item">
       <i class="sidebar icon"></i>
@@ -53,6 +54,41 @@
 
 <ui-view>
 </ui-view>
+
+<div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Blog</a>
+            <a href="#" class="item">FAQ</a>
+            <a href="#" class="item">Careers</a>
+            <a href="#" class="item">Press</a>
+            <a href="#" class="item">Mission</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Scientists</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Researcher Guide</a>
+            <a href="#" class="item">Submit a Project</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Contributors</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Find a Pathway</a>
+            <a href="#" class="item">How it works</a>
+            <a href="#" class="item">Results</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <p>Copyright <i class="copyright icon"></i> 2016 Pathway, Inc. | All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

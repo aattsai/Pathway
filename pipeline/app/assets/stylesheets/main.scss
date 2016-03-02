@@ -1,21 +1,15 @@
-.neuron-bg {
-  background: url("neurons.jpg");
+.logo {
+  font-family: 'Poiret One', cursive;
 }
 
-.main-pg-segment {
-  height: 40rem
-}
-
-.main-slogan {
-  padding-top: 50%;
-  color: white;
-  font-size: 4rem;
+.ui.inverted.menu {
+  margin: 0;
+  background: #838996 !important;
 }
 
 .masthead.segment {
   min-height: 700px;
   padding: 1em 0em;
-  background: url("neurons.jpg");
 }
 
 .masthead h1.ui.header {
@@ -61,4 +55,30 @@
     margin-top: 0.5em;
     font-size: 1.5em;
   }
+}
+
+.second {
+    position: relative;
+    z-index: 1;
+}
+
+.second:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("http://static1.squarespace.com/static/5330c47be4b03ea35b2645a8/t/5361a560e4b032825e58c48d/1398908272046/dreamstime_m_6548803.jpg?format=1500w") center center;
+    opacity: .5;
+}
+
+.footer.segment {
+  padding: 5em 0em;
+  background: #8a8475 !important;
+}
+
+.footer .seven.wide.column {
+  text-align: center;
 }
