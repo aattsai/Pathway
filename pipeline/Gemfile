@@ -43,6 +43,10 @@ gem 'angular-rails-templates'
 
 #Use Semantic UI for Sass as styling framework
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
+gem 'responders', '~> 2.0'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
