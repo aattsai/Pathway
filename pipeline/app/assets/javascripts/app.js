@@ -5,7 +5,10 @@ var pathwayApp = angular.module('pathwayApp', ['ui.router', 'templates', 'Devise
 pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //Default route
   $urlRouterProvider.otherwise('/');
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
   $stateProvider
   .state('home', {
     url: '/',
@@ -14,6 +17,11 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
   .state('login', {
     url: '/user/login',
     templateUrl: 'login.html',
+    controller: 'UserController'
+  })
+  .state('userShow', {
+    url :'/profile',
+    templateUrl: 'userShow.html',
     controller: 'UserController'
   })
   .state('register', {

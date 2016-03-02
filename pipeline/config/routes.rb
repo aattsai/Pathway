@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       resources :projects, only:[:show]
     end
     resources :projects, only: [:create]
+    resources :user, only: [:show]
   end
 end
