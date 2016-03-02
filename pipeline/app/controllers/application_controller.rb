@@ -3,7 +3,6 @@
 class ApplicationController < ActionController::Base
   # ActionController::API => We took this out because conflict between Responders and Rails-API
   # self.responder = ApplicationResponder
-  respond_to :html
 
   include AbstractController::Translation
   include ActionController::RequestForgeryProtection
@@ -31,5 +30,6 @@ class ApplicationController < ActionController::Base
   def verified_request?
     super || valid_authenticity_token?(session, request.headers['X-XSRF-TOKEN'])
   end
+
 
 end
