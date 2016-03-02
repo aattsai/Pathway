@@ -2,7 +2,10 @@
 
 pathwayApp.controller('UserController',
   function($scope, $http, Auth, $state, $cookieStore) {
-    if ($cookieStore.get('pathway_user')) {$scope.userEmail = $cookieStore.get('pathway_user').email}
+    if ($cookieStore.get('pathway_user')) {
+      $scope.userEmail = $cookieStore.get('pathway_user').email
+      $scope.userInfo = $cookieStore.get('pathway_user')
+    }
     $scope.userId = 0
     $scope.signedIn = function() {
       return $cookieStore.get('pathway_user') ? true : false
