@@ -1,48 +1,35 @@
-class ApplicationController < ActionController::API
-  include AbstractController::Translation
+# require "application_responder"
 
+class ApplicationController < ActionController::Base
+  # ActionController::API => We took this out because conflict between Responders and Rails-API
+  # self.responder = ApplicationResponder
+  respond_to :html
+
+  include AbstractController::Translation
+  include ActionController::RequestForgeryProtection
+  include ActionController::Cookies
+  
+  respond_to :json
+
+  # Turn on request forgery protection
+  protect_from_forgery
+
+  after_filter :set_csrf_cookie_for_ng
+
+  def set_csrf_cookie_for_ng
+    cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
+  end
   def index
     render 'layouts/application'
   end
   # before_action :authenticate_user_from_token!
 
-  respond_to :json
-  # User Authentication
-  # Authenticates the user with OAuth2 Resource Owner Password Credentials Grant
-  def authenticate_user_from_token!
-    auth_token = request.headers['Authorization']
 
-    if auth_token
-      authenticate_with_auth_token auth_token
-    else
-      authentication_error
-    end
+  protected
+
+  # In Rails 4.2 and above
+  def verified_request?
+    super || valid_authenticity_token?(session, request.headers['X-XSRF-TOKEN'])
   end
 
-  private
-
-  def authenticate_with_auth_token auth_token 
-    unless auth_token.include?(':')
-      authentication_error
-      return
-    end
-
-    user_id = auth_token.split(':').first
-    user = User.where(id: user_id).first
-
-    if user && Devise.secure_compare(user.access_token, auth_token)
-      # User can access
-      sign_in user, store: false
-    else
-      authentication_error
-    end
-  end
-
-  ## 
-  # Authentication Failure
-  # Renders a 401 error
-  def authentication_error
-    # User's token is either invalid or not in the right format
-    render json: {error: t('unauthorized')}, status: 401  # Authentication timeout
-  end
 end
