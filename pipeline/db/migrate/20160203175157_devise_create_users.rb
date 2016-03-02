@@ -32,6 +32,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.string :first_name, null: false
       t.string :last_name, null: false
+      t.string :title
+      t.string :location
+      t.string :description
+      t.string :affiliates
+
       t.string :access_token
       t.integer :score
 
