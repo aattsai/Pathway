@@ -68,6 +68,23 @@ pathwayApp.controller('UserController',
   }
 
   $scope.register = function() {
+    var credentials = {
+        email: $scope.user.email,
+        password: $scope.user.password,
+        first_name: $scope.user.firstName,
+        last_name: $scope.user.lastName
+    };
+    var config = {
+        headers: {
+            'X-HTTP-Method-Override': 'POST'
+        }
+    };
+
+    Auth.register(credentials, config).then(function(registeredUser) {
+        console.log(registeredUser); // => {id: 1, ect: '...'}
+    }, function(error) {
+        // Registration failed...
+    });
     $http({
       method: 'POST',
       url: '/api/register',
