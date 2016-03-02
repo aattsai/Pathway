@@ -10,7 +10,6 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
   .state('home', {
     url: '/',
     templateUrl: 'index.html',
-    controller: 'HomeController'
   })
   .state('logout', {
     url: '/',
@@ -25,6 +24,11 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
     url: '/user/new',
     templateUrl: 'register.html',
     controller: 'UserController'
+  })
+  .state('discover', {
+    url: '/discover',
+    templateUrl: 'discover.html',
+    controller: 'HomeController'
   })
   .state('showPathway', {
     url: '/pathway/:id',

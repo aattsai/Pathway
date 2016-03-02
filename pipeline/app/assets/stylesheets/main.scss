@@ -1,0 +1,84 @@
+.logo {
+  font-family: 'Poiret One', cursive;
+}
+
+.ui.inverted.menu {
+  margin: 0;
+  background: #838996 !important;
+}
+
+.masthead.segment {
+  min-height: 700px;
+  padding: 1em 0em;
+}
+
+.masthead h1.ui.header {
+  margin-top: 25%;
+  margin-bottom: 0em;
+  font-size: 4rem;
+  font-weight: normal;
+}
+
+.masthead h2 {
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+.hidden.menu {
+  display: none;
+}
+
+.secondary.pointing.menu .toc.item {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .ui.fixed.menu {
+    display: none !important;
+  }
+  .secondary.pointing.menu .item,
+  .secondary.pointing.menu .menu,
+  .secondary.pointing.menu .right.item {
+    display: none;
+  }
+  .secondary.pointing.menu .toc.item {
+    display: block;
+  }
+  .masthead.segment {
+    min-height: 350px;
+  }
+  .masthead h1.ui.header {
+    font-size: 2em;
+    margin-top: 1.5em;
+  }
+  .masthead h2 {
+    margin-top: 0.5em;
+    font-size: 1.5em;
+  }
+}
+
+.second {
+    position: relative;
+    z-index: 1;
+}
+
+.second:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("http://static1.squarespace.com/static/5330c47be4b03ea35b2645a8/t/5361a560e4b032825e58c48d/1398908272046/dreamstime_m_6548803.jpg?format=1500w") center center;
+    opacity: .5;
+}
+
+.footer.segment {
+  padding: 5em 0em;
+  background: #8a8475 !important;
+}
+
+.footer .seven.wide.column {
+  text-align: center;
+}
