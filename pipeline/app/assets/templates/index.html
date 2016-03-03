@@ -8,8 +8,8 @@
       <div ng-controller="UserController">
         <div ng-if="signedIn()">
           Welcome, <a ui-sref="userShow">{{ userEmail }}</a>
+          <a ui-sref="createProject">Create Project</a>
           <button ng-click="logout()" class="ui basic red button" >Logout</button>
-
         </div>
         <div ng-if="!signedIn()">
           <a ui-sref="login"><button class="ui basic blue button">Return User Login</button></a>
