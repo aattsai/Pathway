@@ -15,6 +15,9 @@ angular.module('pathwayApp')
       data: {project: $scope.project } 
     }).success(function(data, status){
       console.log("hello from create()")
+      $state.go('home')
+    }).error(function(data){
+      console.log(data)
     })
   }
 });
