@@ -1,0 +1,52 @@
+<div class="ui middle aligned segment center aligned">
+  <div class="column">
+    <h2 class="ui olive image header">
+      <div class="content">
+        Complete your Profile
+      </div>
+    </h2>
+    <form name="userRegisterForm" ng-submit="submit()" role="form" ng-init="user = {}" class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input focus id="firstName" required type="text" placeholder="First Name" ng-model="user.firstName" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input id="lastName" required type="lastName" placeholder="Last Name" ng-model="user.lastName" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="mail icon"></i>
+            <input focus id="title" required type="text" placeholder="Title" ng-model="user.title" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="mail icon"></i>
+            <input focus id="location" required type="text" placeholder="Location" ng-model="user.location" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="mail icon"></i>
+            <input focus id="affiliates" required type="text" placeholder="Affiliates" ng-model="user.affliate" />
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="mail icon"></i>
+            <input focus id="affiliates" required type="textarea" placeholder="Description" ng-model="user.description" />
+          </div>
+        </div>
+
+        <button type="submit" class="ui fluid large olive submit button" ng-click="register()">Update</button>
+        <p class="error-message">{{message}}</p>
+      </div>
+    </form>
+  </div>
+</div>
