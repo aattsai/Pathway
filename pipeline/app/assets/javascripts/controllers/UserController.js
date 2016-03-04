@@ -69,5 +69,16 @@ pathwayApp.controller('UserController',
         // Registration failed...
     });
   }
+  $scope.update = function() {
+    $http({
+      method: 'PUT',
+      url: '/api/users',
+      data: {user: $scope.user}
+    }).success(function(data, status){
+      console.log("hello from create()")
+      $state.go('home')
+    }).error(function(data){
+      console.log(data)
+    })
   }
-)
+})
