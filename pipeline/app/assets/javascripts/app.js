@@ -44,6 +44,11 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
     templateUrl: 'newProject.html',
     controller: 'ProjectController'
   })
+  .state('createPathway', {
+    url: '/pathway/new',
+    templateUrl: 'newPathway.html',
+    controller: 'PathwayController'
+  })
   .state('showPathway', {
     url: '/pathway/:id',
     templateUrl: 'pathway.html',
