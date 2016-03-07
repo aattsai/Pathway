@@ -23,13 +23,14 @@ angular.module('pathwayApp')
       console.log(data)
     })
   }
+  var projects = 0 
   $scope.addProject = function(project, donated_weight) {
     $http({method: 'POST',
       url: '/api/pathways/' + $stateParams.id + '/projects',
       data: {projects: project, weight: donated_weight } 
     }).success(function(data, status){
-      console.log("hello from create()")
-      $state.go('home')
+      projects += 1
+      if (projects == 3) {$state.go('showPathway', {'id': data.pathway_id })} 
     }).error(function(data){
       console.log(data)
     })
