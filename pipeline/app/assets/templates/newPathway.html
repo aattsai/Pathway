@@ -1,0 +1,15 @@
+{{message}}
+<form name="newPathwayForm" ng-submit="submit()" role="form" ng-init="pathway = {}">
+  <div>
+        <label for="name">Name:</label>
+        <input focus id="name" required type="text" placeholder="Name of Pathway" ng-model="pathway.name" />
+    </div>
+    <div>
+        <label for="Description">Description</label>
+        <textarea id="description" required type="Description" placeholder="Description of Pathway" ng-model="pathway.description" rows="5"></textarea>
+    </div>
+    <div>
+        <button type="submit" ng-click="create()">Submit Pathway</button>
+    </div>
+  </div>
+</form>

@@ -9,6 +9,7 @@
         <div ng-if="signedIn()">
           Welcome, <a ui-sref="userShow">{{ firstName }}</a>
           <a ui-sref="createProject">Create Project</a>
+          <a ui-sref="createPathway">Create Pathway</a>
           <button ng-click="logout()" class="ui basic red button" >Logout</button>
         </div>
         <div ng-if="!signedIn()">

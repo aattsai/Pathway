@@ -5,7 +5,7 @@ pathwayApp.controller('UserController',
     if ($cookieStore.get('pathway_user')) {
       $scope.firstName = $cookieStore.get('pathway_user').first_name
     }
-    $scope.userId = 0
+    $scope.userId = $cookieStore.get('pathway_user') ? $cookieStore.get('pathway_user').id : 0
     $scope.signedIn = function() {
       return $cookieStore.get('pathway_user') ? true : false
     }
@@ -71,7 +71,7 @@ pathwayApp.controller('UserController',
   $scope.update = function() {
     $http({
       method: 'PUT',
-      url: '/api/users/' + $cookieStore.get('pathway_user').id,
+      url: '/api/users/' + $scope.userId,
       data: {user: $scope.user}
     }).success(function(data, status){
       console.log("hello from create()")
@@ -82,9 +82,11 @@ pathwayApp.controller('UserController',
   }
   $scope.loadUser = function() {
     $http({method: 'GET',
-         url: '/api/users/' + $cookieStore.get('pathway_user').id
+         url: '/api/users/' + $scope.userId
     }).success(function(data, status){
       $scope.userInfo = data
+    }).error(function(data){
+      console.log("User is not logged in")
     })
   }
 
