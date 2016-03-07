@@ -14,7 +14,7 @@ angular.module('pathwayApp')
       data: {pathway: $scope.pathway, user: $scope.user.id } 
     }).success(function(data, status){
       console.log("hello from create() pathway")
-      $state.go('showPathway', {'id': data.id })
+      $state.go('selectProjects', {'id': data.id })
     }).error(function(data){
       console.log(data)
     })
