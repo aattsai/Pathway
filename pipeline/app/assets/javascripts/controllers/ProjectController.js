@@ -23,7 +23,6 @@ angular.module('pathwayApp')
       console.log(data)
     })
   }
-  var projects = 0
   var currentPathway = 0
   $scope.projectsAdded = []
   $scope.addProject = function(project, donated_weight) {
@@ -32,10 +31,8 @@ angular.module('pathwayApp')
       url: '/api/pathways/' + $stateParams.id + '/projects',
       data: {projects: project, weight: donated_weight } 
     }).success(function(data, status){
-      projects += 1
       currentPathway = data.pathway_id
       $scope.projectsAdded.push(projectObj.name)
-      if (projects == 3) {$state.go('showPathway', {'id': currentPathway })} 
     }).error(function(data){
       console.log("Error adding project")
     })
