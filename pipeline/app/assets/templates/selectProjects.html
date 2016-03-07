@@ -1,4 +1,14 @@
-<h1>Please select 3 projects:</h1>
+<h1>Please select projects:</h1>
+
 <div ng-repeat="project in allProjects">
   <button ng-click="addProject(project, 33.3)">{{project.name}}</button>
+</div>
+
+<h3>Projects Added:</h3>
+<div ng-repeat="project in projectsAdded">
+  <div>{{project}}</div>
+</div>
+
+<div>
+  <button ng-click="nextPage()">Done</button>
 </div>

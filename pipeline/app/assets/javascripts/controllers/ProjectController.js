@@ -23,16 +23,25 @@ angular.module('pathwayApp')
       console.log(data)
     })
   }
-  var projects = 0 
+  var projects = 0
+  var currentPathway = 0
+  $scope.projectsAdded = []
   $scope.addProject = function(project, donated_weight) {
+    var projectObj = project
     $http({method: 'POST',
       url: '/api/pathways/' + $stateParams.id + '/projects',
       data: {projects: project, weight: donated_weight } 
     }).success(function(data, status){
       projects += 1
-      if (projects == 3) {$state.go('showPathway', {'id': data.pathway_id })} 
+      currentPathway = data.pathway_id
+      $scope.projectsAdded.push(projectObj.name)
+      if (projects == 3) {$state.go('showPathway', {'id': currentPathway })} 
     }).error(function(data){
-      console.log(data)
+      console.log("Error adding project")
     })
+  }
+  $scope.nextPage = function() {
+    if (currentPathway == 0) { history.back() }
+    else { $state.go('showPathway', {'id': currentPathway}) }
   }
 });
