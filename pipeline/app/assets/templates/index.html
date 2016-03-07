@@ -7,7 +7,7 @@
       <h2>Together, we will build Pathways to cure</h2>
       <div ng-controller="UserController">
         <div ng-if="signedIn()">
-          Welcome, <a ui-sref="userShow">{{ userEmail }}</a>
+          Welcome, <a ui-sref="userShow">{{ firstName }}</a>
           <a ui-sref="createProject">Create Project</a>
           <button ng-click="logout()" class="ui basic red button" >Logout</button>
         </div>

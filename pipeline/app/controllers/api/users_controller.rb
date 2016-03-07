@@ -13,10 +13,24 @@ module Api
       end
     end
 
+    def show
+      @user = User.find(params[:id])
+      render json: @user
+    end
+
+    def update
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        render json: @user, serializer: Api::SessionSerializer, root:nil
+      else
+        render json: { error: @user.errors.full_messages }, status: :unprocessable_entity
+      end
+    end
+
     private
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :title, :location, :affiliates, :description)
     end
   end
 end

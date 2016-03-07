@@ -3,8 +3,7 @@
 pathwayApp.controller('UserController',
   function($scope, $http, Auth, $state, $cookieStore) {
     if ($cookieStore.get('pathway_user')) {
-      $scope.userEmail = $cookieStore.get('pathway_user').email
-      $scope.userInfo = $cookieStore.get('pathway_user')
+      $scope.firstName = $cookieStore.get('pathway_user').first_name
     }
     $scope.userId = 0
     $scope.signedIn = function() {
@@ -69,5 +68,25 @@ pathwayApp.controller('UserController',
         // Registration failed...
     });
   }
+  $scope.update = function() {
+    $http({
+      method: 'PUT',
+      url: '/api/users/' + $cookieStore.get('pathway_user').id,
+      data: {user: $scope.user}
+    }).success(function(data, status){
+      console.log("hello from create()")
+      $state.go('home')
+    }).error(function(data){
+      console.log(data)
+    })
   }
-)
+  $scope.loadUser = function() {
+    $http({method: 'GET',
+         url: '/api/users/' + $cookieStore.get('pathway_user').id
+    }).success(function(data, status){
+      $scope.userInfo = data
+    })
+  }
+
+  $scope.userInfo = $scope.loadUser()
+})

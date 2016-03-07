@@ -29,6 +29,11 @@ pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider
     templateUrl: 'register.html',
     controller: 'UserController'
   })
+  .state('userUpdate', {
+    url: '/profile/edit',
+    templateUrl: 'userUpdate.html',
+    controller: 'UserController'
+  })
   .state('discover', {
     url: '/discover',
     templateUrl: 'discover.html',
