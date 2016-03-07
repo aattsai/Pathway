@@ -1,0 +1,11 @@
+<div ng-repeat="project in allProjects">
+  Title: {{project.name}}
+  <div>
+    Description: {{project.description | limitTo: 100}}
+  </div>
+  Enter default percentage:
+  <div>
+    <input type="number" name="weight" ng-model="donated_weight">
+  </div>
+  <button ng-click="addProject(project, donated_weight)">Add Project</button>
+</div>

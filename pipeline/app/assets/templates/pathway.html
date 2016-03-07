@@ -1,7 +1,9 @@
 <div ng-controller="PathwayController">
   <h1>{{pathway.name}}</h1>
   <p>Description: {{pathway.description}}</p>
-
+    <div ng=if="user.id == pathway.user_id">
+      <a ui-sref="selectProjects({id: pathway.id })">Select Projects</a>
+    </div>
   <h2>Projects</h2>
   <div ng-repeat="pathway_project in pathway.pathway_projects">
     <h3><a ui-sref="showProject({pathway_id: pathway.id, id: pathway_project.project.id })">{{pathway_project.project.name}}</a></h3>
