@@ -12,6 +12,7 @@ module Api
     def create
       user = User.find(params[:user])
       pathway = user.pathways.new(pathway_params)
+      pathway.avatar = params[:file]
       if pathway.save
         render json: pathway
       else
@@ -22,7 +23,7 @@ module Api
     private
 
     def pathway_params
-      params.require(:pathway).permit(:name, :description)
+      params.require(:pathway).permit(:name, :description, :avatar)
     end
   end
 end
