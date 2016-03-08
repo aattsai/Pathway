@@ -41,7 +41,6 @@ angular.module('pathwayApp')
     })
   }
   $scope.nextPage = function() {
-    if (currentPathway == 0) { history.back() }
-    else { $state.go('showPathway', {'id': currentPathway}) }
+    $state.go('showPathway', {'id': $stateParams.id})
   }
 });
