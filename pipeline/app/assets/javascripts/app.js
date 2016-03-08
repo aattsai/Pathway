@@ -1,6 +1,6 @@
 'use strict';
 
-var pathwayApp = angular.module('pathwayApp', ['ui.router', 'templates', 'Devise', 'ngCookies']);
+var pathwayApp = angular.module('pathwayApp', ['ui.router', 'templates', 'Devise', 'ngCookies', 'ngFileUpload']);
 
 pathwayApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //Default route

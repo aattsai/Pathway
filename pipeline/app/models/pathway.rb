@@ -4,4 +4,6 @@ class Pathway < ActiveRecord::Base
   has_many :pathway_projects
 
   validates :name, presence: true
+
+  mount_uploader :avatar, AvatarUploader
 end

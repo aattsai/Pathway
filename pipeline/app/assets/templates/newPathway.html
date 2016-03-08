@@ -9,6 +9,11 @@
         <textarea id="description" required type="Description" placeholder="Description of Pathway" ng-model="pathway.description" rows="5"></textarea>
     </div>
     <div>
+        <label for="avatar">Avatar:</label>
+        <input type="file" ngf-select ng-model="pathway.avatar" accept="image/*">
+
+    </div>
+    <div>
         <button type="submit" ng-click="create()">Submit Pathway</button>
     </div>
   </div>
