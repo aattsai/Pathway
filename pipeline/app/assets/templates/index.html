@@ -7,15 +7,15 @@
       <h2>Together, we will build Pathways to cure</h2>
       <div ng-controller="UserController">
         <div ng-if="signedIn()">
-          Welcome, <a ui-sref="userShow">{{ firstName }}</a>
+          <!-- Welcome, <a ui-sref="userShow">{{ firstName }}</a> -->
           <a ui-sref="createProject">Create Project</a>
           <a ui-sref="createPathway">Create Pathway</a>
-          <button ng-click="logout()" class="ui basic red button" >Logout</button>
+          <!-- <button ng-click="logout()" class="ui basic red button" >Logout</button> -->
         </div>
-        <div ng-if="!signedIn()">
+<!--         <div ng-if="!signedIn()">
           <a ui-sref="login"><button class="ui basic blue button">Return User Login</button></a>
           <a ui-sref="register"><button class="ui basic orange button">New User Register</button></a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
