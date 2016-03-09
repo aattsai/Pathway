@@ -20,11 +20,10 @@ pathwayApp.controller('UserController',
           }
       };
       Auth.login(credentials, config).then(function(user) {
-        console.log(user);
         $cookieStore.put('pathway_user', user);
         Auth.currentUser().then(function(user) {
-          $state.go('home')
-        }, function(err) {
+          window.location.href = '/'
+        }, function(error) {
           console.log(error)
         });
       }, function(data) {
