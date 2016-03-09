@@ -9,6 +9,7 @@
 </head>
 
 <body ng-app="pathwayApp">
+<div ng-controller="UserController">
 
 <div class="ui top fixed hidden menu">
   <a ui-sref="home">
@@ -20,19 +21,25 @@
   <a class="item">
     How It Works
   </a>
-  <a class="right item">
+  <!-- <a class="right item">
     Contact Us
-  </a>
+  </a> -->
+  <div class="right item">
+    <a ng-if="signedIn()" ui-sref="userShow" class="item">{{ firstName }}</a>
+    <a ng-if="signedIn()" ng-click="logout()" class="item">Logout</a>
+    <a ng-if="!signedIn()" ui-sref="login" class="item">Login</a>
+    <a ng-if="!signedIn()" ui-sref="register" class="item">Register</a>
+  </div>
 </div>
 
   <div class="ui inverted menu">
     <div class="right item">
       <div class="ui inverted transparent icon input">
-        <input type="text" placeholder="Search for pathway">
-        <i class="search link icon"></i>
+        <a href="#" class="white-font">Contact Us</a>
       </div>
     </div>
   </div>
+
   <nav class="ui secondary pointing menu dis">
     <a ui-sref="home">
       <h1 class="ui item logo active">Pathway</h1>
@@ -46,9 +53,15 @@
     <a class="item">
       How It Works
     </a>
-    <a class="right item">
+<!--     <a class="right item">
       Contact Us
-    </a>
+    </a> -->
+        <button ng-if="signedIn()" ui-sref="userShow" class="right item header">{{ firstName }}</a>
+        <button ng-if="signedIn()" ng-click="logout()" class="item">Logout</button>
+        <a ng-if="!signedIn()" ui-sref="login" class="right item">Login</a>
+        <a ng-if="!signedIn()" ui-sref="register" class="item">Register</a>
+      </div>
+    </div>
   </nav>
 
 <ui-view>
