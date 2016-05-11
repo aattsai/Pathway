@@ -1,29 +1,56 @@
-<div class="pusher"></div>
-  <div class="ui vertical masthead center aligned segment first">
-    <div class="ui text container">
-      <h1 class="ui header">
-        Forget about Silver Bullets
-      </h1>
-      <h2>Together, we will build Pathways to cure</h2>
-      <div ng-controller="UserController">
-        <div ng-if="signedIn()">
-          <!-- Welcome, <a ui-sref="userShow">{{ firstName }}</a> -->
-          <a ui-sref="createProject">Create Project</a>
-          <a ui-sref="createPathway">Create Pathway</a>
-          <!-- <button ng-click="logout()" class="ui basic red button" >Logout</button> -->
-        </div>
-<!--         <div ng-if="!signedIn()">
-          <a ui-sref="login"><button class="ui basic blue button">Return User Login</button></a>
-          <a ui-sref="register"><button class="ui basic orange button">New User Register</button></a>
-        </div> -->
+<div class="ui vertical masthead center aligned segment first">
+  <div class="ui text container">
+    <h2 class="century">I want to contribute to ____________________________</h2>
+    <div ng-controller="UserController">
+      <div ng-if="signedIn()">
       </div>
     </div>
   </div>
+</div>
 
-  <div class="ui vertical masthead center aligned segment second">
-    <div class="ui text container">
-      <h1 class="ui header">
-        Diseases are indiscriminatory, efforts to find cure should be, too!
-      </h1>
+<div class="ui vertical masthead center aligned segment second">
+  <div class="ui container">
+    <h2 class="century">what is a <span class="pathway">Pathway</span></h2>
+    <p>In science, pathways are catalyzed sequences of reactions that lead to biochemical changes. Here at Pathways Fund, we believe that it sequences of research projects with enough support to solve a major problem. Therefore we created Pathway, which is a curated portfolio of promising research projects for a common cause. </p>
+  </div>
+</div>
+
+<div class="ui vertical masthead center aligned segment third">
+  <div class="ui container">
+    <div class="ui stackable grid impact">
+      <div class="four wide column">
+        <h3 class="ui inverted header century">basic research</h3>
+        <div class="icon-margin"><i class="inverted orange big lab icon"></i></div>
+        <p>basic research aims to improve scientific theories for improved understanding or prediction of natural or other phenomena.</p>
+      </div>
+      <div class="ui vertical divider"></div>
+      <div class="four wide column">
+        <h3 class="ui inverted header century">high impact</h3>
+        <div class="icon-margin"><i class="inverted orange big trophy icon"></i></div>
+        <p>In science, pathways are catalyzed sequences of reactions that lead to biochemical changes. Here at Pathways Fund, we believe that it sequences of research projects with enough support to solve a major problem. Therefore we created Pathway, which is a curated portfolio of promising research projects for a common cause.</p>
+      </div>
+      <div class="ui vertical divider"></div>
+      <div class="four wide column">
+        <h3 class="ui inverted header century">overlooked</h3>
+        <div class="icon-margin"><i class="inverted orange big unhide icon"></i></div>
+        <p>In science, pathways are catalyzed sequences of reactions that lead to biochemical changes. Here at Pathways Fund, we believe that it sequences of research projects with enough support to solve a major problem. Therefore we created Pathway, which is a curated portfolio of promising research projects for a common cause.</p>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="ui vertical masthead center aligned segment second">
+  <div class="ui container">
+    <h2 class="century">who we are</span></h2>
+    <p>We are a group of scientists, technologists, and entrepreneurs who are passionate about making a difference. </p>
+  </div>
+</div>
+
+<div class="ui vertical masthead center aligned segment fifth">
+  <div class="ui text container">
+    <div class="text-box">
+      <h2 class="century">"Look deep into nature, and then you will understand everything better."</h2>
+      <h3 class="century albert">-Albert Einstein</h3>
+    </div>
+  </div>
+</div>

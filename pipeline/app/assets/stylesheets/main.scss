@@ -2,26 +2,88 @@
   font-family: 'Poiret One', cursive;
 }
 
+.icon-margin {
+  margin: 1rem !important;
+}
+
 .ui.inverted.menu {
   margin: 0;
   background: #838996 !important;
 }
 
-.masthead.segment {
-  min-height: 700px;
-  padding: 1em 0em;
+.text-box {
+  background: rgba(255, 255, 255, .6);
+  margin-top: 10rem;
+  text-align: left;
+  padding: 1rem;
 }
 
-.masthead h1.ui.header {
-  margin-top: 25%;
-  margin-bottom: 0em;
-  font-size: 4rem;
+.first {
+  background-image: url("moonsky.jpg") !important;
+  background-size: cover !important;
+  min-height: 60rem;
+}
+
+.first h2 {
+  margin-top: 40% !important;
+  color: white !important;
+  font-size: 2.0 rem !important;
   font-weight: normal;
 }
 
-.masthead h2 {
-  font-size: 1.7em;
-  font-weight: normal;
+.second {
+  background-color: #F2F4F7 !important;
+  min-height: 40rem;
+}
+
+.second h2 {
+  margin-top: 5rem;
+  color: #374044 !important;
+  font-size: 2.5 rem !important;
+  font-weight: normal !important;
+}
+
+.third h3 {
+  color: #D9E6EC;
+}
+
+.third p {
+  color: #D9E6EC;
+}
+
+.pathway {
+  color: #48687A;
+  font-family: 'Poiret One', cursive;
+}
+
+.century {
+  font-family: "Century Gothic" !important;
+}
+
+.avenir {
+  font-family: "Avenir" !important;
+}
+
+.third {
+  background-color: #1E4468 !important;
+  min-height: 30rem;
+}
+
+.impact {
+    margin-top: 5rem !important;
+}
+
+.fifth {
+  background-image: url("forestpath.jpg") !important;
+  background-size: cover !important;
+  min-height: 50rem;
+}
+
+.fifth.h2 {
+  margin-top: 5rem;
+  color: #374044 !important;
+  font-size: 2.5 rem !important;
+  font-weight: normal !important;
 }
 
 .hidden.menu {
@@ -31,6 +93,8 @@
 .secondary.pointing.menu .toc.item {
   display: none;
 }
+
+
 
 @media only screen and (max-width: 700px) {
   .ui.fixed.menu {
@@ -57,23 +121,6 @@
   }
 }
 
-.second {
-    position: relative;
-    z-index: 1;
-}
-
-.second:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: url("http://static1.squarespace.com/static/5330c47be4b03ea35b2645a8/t/5361a560e4b032825e58c48d/1398908272046/dreamstime_m_6548803.jpg?format=1500w") center center;
-    opacity: .5;
-}
-
 body > .grid {
   height: 100%;
 }
@@ -89,7 +136,7 @@ body > .grid {
 
 .footer.segment {
   padding: 5em 0em;
-  background: #847b6a !important;
+  background: #4C4436 !important;
 }
 
 .footer .seven.wide.column {
